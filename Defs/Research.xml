@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+	<ResearchTabDef>
+		<defName>Antibiotics</defName>
+		<label>Antibiotics</label>
+	</ResearchTabDef>
+
+    <ResearchProjectDef>
+        <defName>BasicAntibioticsProduction</defName>
+        <label>Basic Antibiotics Production</label>
+        <description>Produce Penicillin-class antibiotics using basic brewing and drug refining technologies.</description>
+        <baseCost>600</baseCost>
+        <techLevel>Industrial</techLevel>
+        <tab>Antibiotics</tab>
+        <prerequisites>
+            <li>Brewing</li>
+            <li>DrugProduction</li>
+        </prerequisites>
+        <researchViewX>0</researchViewX>
+        <researchViewY>0</researchViewY>
+    </ResearchProjectDef>
+
+    <ResearchProjectDef>
+        <defName>AdvancedAntibioticsProduction</defName>
+        <label>Broad-Spectrum Antibiotics Production</label>
+        <description>Produce broad-spectrum antibiotics using advanced drug refining technologies.</description>
+        <baseCost>1000</baseCost>
+        <techLevel>Industrial</techLevel>
+        <tab>Antibiotics</tab>
+        <prerequisites>
+            <li>PenoxycylineProduction</li>
+            <li>BasicAntibioticsProduction</li>
+            <li>MicroelectronicsBasics</li>
+        </prerequisites>
+        <researchViewX>1</researchViewX>
+        <researchViewY>0</researchViewY>
+    </ResearchProjectDef>
+
+    <ResearchProjectDef>
+        <defName>GlitterworldAntibioticsProduction</defName>
+        <label>Nanorobotic-Targeted Antibiotics Production</label>
+        <description>Produce auto-targeting antibiotics using advanced drug refining technologies and nanotechnology.</description>
+        <baseCost>3000</baseCost>
+        <techLevel>Industrial</techLevel>
+        <tab>Antibiotics</tab>
+        <prerequisites>
+            <li>AdvancedAntibioticsProduction</li>
+            <li>Fabrication</li>
+        </prerequisites>
+        <requiredResearchBuilding>HiTechResearchBench</requiredResearchBuilding>
+        <requiredResearchFacilities>
+            <li>MultiAnalyzer</li>
+        </requiredResearchFacilities>
+        <researchViewX>2</researchViewX>
+        <researchViewY>0</researchViewY>
+    </ResearchProjectDef>
+</Defs>

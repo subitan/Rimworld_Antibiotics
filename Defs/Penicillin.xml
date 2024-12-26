@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+    <ThingDef ParentName="AntibioticsBase">
+        <defName>Penicillin</defName>
+        <label>penicillin</label>
+        <description>A drug which reduces the progress of an infection, allowing the body to catch up and develop an immunity.
+        
+Penicillin is created from a form of mold known as a Penicillium, from which an essence is separated and purified.
+
+Penicillin is a weak antibiotics, which mostly just reduces the pace of an infection, slowing its rate of progress. More powerful antibiotics can greatly reduce the infection level.</description>
+        <graphicData>
+            <texPath>Things/Item/Drug/Penicillin</texPath>
+            <graphicClass>Graphic_StackCount</graphicClass>
+        </graphicData>
+        <statBases>
+            <WorkToMake>500</WorkToMake>
+            <MarketValue>10</MarketValue>
+            <Mass>0.01</Mass>
+        </statBases>
+        <costList>
+            <Beer>2</Beer>
+        </costList>
+        <recipeMaker>
+            <researchPrerequisite>BasicAntibioticsProduction</researchPrerequisite>
+            <recipeUsers>
+                <li>DrugLab</li>
+            </recipeUsers>
+            <soundWorking>Recipe_Drug</soundWorking>
+        </recipeMaker>
+        <ingestible>
+            <outcomeDoers>
+                <li Class="IngestionOutcomeDoer_GiveHediff">
+                    <hediffDef>BasicAntibioticEffect</hediffDef>
+                    <severity>1.0</severity>
+                </li>
+            </outcomeDoers>
+        </ingestible>
+        <comps>
+			<li Class="CompProperties_Drug">
+                <listOrder>40</listOrder>
+            </li>
+		</comps>
+    </ThingDef>
+    <HediffDef ParentName="AntibioticsBaseHediff">
+        <defName>BasicAntibioticEffect</defName>
+        <label>basic antibiotic effect</label>
+        <comps>
+            <li Class="HediffCompProperties_SeverityPerDay">
+                <showHoursToRecover>true</showHoursToRecover>
+                <severityPerDay>-1.00</severityPerDay>
+            </li>
+        </comps>
+        <stages>
+            <li>
+                <statOffsets>
+                    <ImmunityGainSpeed>0.05</ImmunityGainSpeed>
+                </statOffsets>
+            </li>
+        </stages>
+    </HediffDef>
+</Defs>

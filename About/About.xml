@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ModMetaData>
+    <name>Antibiotics</name>
+    <description>This mod adds Antibiotics to the game, a class of drugs that reduce the progress of infection.</description>
+    <author>Subitan</author>
+    <url>http://github.com/subitan/Rimworld_Antibiotics</url>
+    <supportedVersions>
+        <li>1.4</li>
+        <li>1.5</li>
+    </supportedVersions>
+    <packageId>subitan.antibiotics</packageId>
+</ModMetaData>

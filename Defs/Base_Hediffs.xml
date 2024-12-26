@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+    <HediffDef Name="AntibioticsBaseHediff" Abstract="True">
+        <hediffClass>HediffWithComps</hediffClass>
+        <label>antibiotic</label>
+        <description>Reduces the progress of infection.</description>
+        <defaultLabelColor>(0.65, 0.3, 0.9)</defaultLabelColor>
+        <scenarioCanAdd>true</scenarioCanAdd>
+        <maxSeverity>1.0</maxSeverity>
+        <isBad>false</isBad>
+    </HediffDef>
+</Defs>

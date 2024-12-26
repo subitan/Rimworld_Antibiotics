@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+    <ThingDef Name="AntibioticsBase" ParentName="MakeableDrugPillBase" Abstract="True">
+        <ingestible>
+            <foodType>Processed</foodType>
+            <drugCategory>Medical</drugCategory>
+            <nurseable>true</nurseable>
+        </ingestible>
+    </ThingDef>
+</Defs>

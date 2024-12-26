@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+    <ThingDef ParentName="AntibioticsBase">
+        <defName>Tetracycline</defName>
+        <label>tetracycline</label>
+        <description>A drug which substantially the progress of an infection, allowing the body to catch up and develop an immunity.
+        
+Tetracycline is created from a modification of Penoxycyline, a drug which prevents infection.
+
+Tetracycline is a broad-spectrum antibiotic, which has a stronger impact than Penicillin.</description>
+        <graphicData>
+            <texPath>Things/Item/Drug/Tetracycline</texPath>
+            <graphicClass>Graphic_StackCount</graphicClass>
+        </graphicData>
+        <statBases>
+            <WorkToMake>1000</WorkToMake>
+            <MarketValue>50</MarketValue>
+            <Mass>0.005</Mass>
+            <Flammability>0.7</Flammability>
+        </statBases>
+        <costList>
+            <Penoxycyline>1</Penoxycyline>
+            <Neutroamine>2</Neutroamine>
+        </costList>
+        <recipeMaker>
+            <researchPrerequisite>AdvancedAntibioticsProduction</researchPrerequisite>
+            <recipeUsers>
+                <li>DrugLab</li>
+            </recipeUsers>
+            <soundWorking>Recipe_Drug</soundWorking>
+        </recipeMaker>
+        <ingestible>
+            <outcomeDoers>
+                <li Class="IngestionOutcomeDoer_GiveHediff">
+                    <hediffDef>AdvancedAntibioticEffect</hediffDef>
+                    <severity>1.0</severity>
+                </li>
+            </outcomeDoers>
+        </ingestible>
+        <comps>
+			<li Class="CompProperties_Drug">
+                <listOrder>40</listOrder>
+            </li>
+		</comps>
+    </ThingDef>
+    <HediffDef ParentName="AntibioticsBaseHediff">
+        <defName>AdvancedAntibioticEffect</defName>
+        <label>broad-spectrum antibiotic effect</label>
+        <comps>
+            <li Class="HediffCompProperties_SeverityPerDay">
+                <showHoursToRecover>true</showHoursToRecover>
+                <severityPerDay>-1.00</severityPerDay>
+            </li>
+        </comps>
+        <stages>
+            <li>
+                <statOffsets>
+                    <ImmunityGainSpeed>0.25</ImmunityGainSpeed>
+                </statOffsets>
+            </li>
+        </stages>
+    </HediffDef>
+</Defs>

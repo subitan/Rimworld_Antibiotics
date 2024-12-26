@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+    <ThingDef ParentName="AntibioticsBase">
+        <defName>Luminomycin</defName>
+        <label>luminomycin</label>
+        <description>A glitterworld drug which actively targets an infection, using nano-robotics to stimulate the body's immunity.
+        
+Luminomycin is created purely through nano-robotics, at a Fabrication bench, through advanced fabrication techniques.
+
+Tetracycline is a broad-spectrum antibiotic, which has a stronger impact than Penicillin.</description>
+        <graphicData>
+            <texPath>Things/Item/Drug/Tetracycline</texPath>
+            <graphicClass>Graphic_StackCount</graphicClass>
+        </graphicData>
+        <statBases>
+            <WorkToMake>1000</WorkToMake>
+            <MarketValue>50</MarketValue>
+            <Mass>0.005</Mass>
+            <Flammability>0.7</Flammability>
+        </statBases>
+        <costList>
+            <Penoxycyline>2</Penoxycyline>
+            <ComponentIndustrial>2</ComponentIndustrial>
+        </costList>
+        <recipeMaker>
+            <researchPrerequisite>GlitterworldAntibioticsProduction</researchPrerequisite>
+            <recipeUsers>
+                <li>FabricationBench</li>
+            </recipeUsers>
+            <soundWorking>Recipe_Drug</soundWorking>
+        </recipeMaker>
+        <ingestible>
+            <outcomeDoers>
+                <li Class="IngestionOutcomeDoer_GiveHediff">
+                    <hediffDef>GlitterworldAntibioticEffect</hediffDef>
+                    <severity>1.0</severity>
+                </li>
+            </outcomeDoers>
+        </ingestible>
+        <comps>
+			<li Class="CompProperties_Drug">
+                <listOrder>40</listOrder>
+            </li>
+		</comps>
+    </ThingDef>
+    <HediffDef ParentName="AntibioticsBaseHediff">
+        <defName>GlitterworldAntibioticEffect</defName>
+        <label>nano-targeted antibiotic effect</label>
+        <comps>
+            <li Class="HediffCompProperties_SeverityPerDay">
+                <showHoursToRecover>true</showHoursToRecover>
+                <severityPerDay>-0.25</severityPerDay>
+            </li>
+        </comps>
+        <stages>
+            <li>
+                <statOffsets>
+                    <ImmunityGainSpeed>1.0</ImmunityGainSpeed>
+                </statOffsets>
+            </li>
+        </stages>
+    </HediffDef>
+</Defs>
